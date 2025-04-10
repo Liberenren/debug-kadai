@@ -80,6 +80,7 @@
             let minutes = document.getElementById('minutes').value || 0;
             let seconds = document.getElementById('seconds').value || 0;
             let timeLeft = (minutes * 60) + parseInt(seconds);
+            isPaused = false;
             
             setMode("progress");
             countdownInterval = setInterval(() => {
@@ -106,6 +107,7 @@
         // カウントダウンをリセットする関数
         function resetCountdown() {
             clearInterval(countdownInterval);
+            isPaused = false;
             updateTimer();
             setMode("restart");
         }
